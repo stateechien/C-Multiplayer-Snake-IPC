@@ -6,18 +6,18 @@
 
 | 要求 | 狀態 | 實作方式 |
 |------|------|----------|
-| **Server: Multi-process** | ✅ | Prefork Workers + Game Loop Process |
-| **IPC: 共享記憶體** | ✅ | System V Shared Memory (shmget/shmat) |
-| **Client: Multi-threaded** | ✅ | Input + Receiver + Heartbeat 三個執行緒 |
-| **100+ 併發壓力測試** | ✅ | `./client -s 100` |
-| **延遲/吞吐量統計** | ✅ | Avg Latency (μs) + Throughput (req/sec) |
-| **Custom Protocol** | ✅ | 8-byte header [Len\|OpCode\|Checksum] |
-| **Security: Checksum** | ✅ | 16-bit checksum 驗證 |
-| **Security: 加密** | ✅ | XOR cipher (key: 0x5A) |
-| **Reliability: Heartbeat** | ✅ | Client 每 3 秒發送心跳 |
-| **Reliability: Timeout** | ✅ | Server 追蹤連線狀態 |
-| **Modularity: 靜態函式庫** | ✅ | libproto.a |
-| **README 文件** | ✅ | 本文件 |
+| **Server: Multi-process** | ok | Prefork Workers + Game Loop Process |
+| **IPC: 共享記憶體** | ok | System V Shared Memory (shmget/shmat) |
+| **Client: Multi-threaded** | ok | Input + Receiver + Heartbeat 三個執行緒 |
+| **100+ 併發壓力測試** | ok | `./client -s 100` |
+| **延遲/吞吐量統計** | ok | Avg Latency (μs) + Throughput (req/sec) |
+| **Custom Protocol** | ok | 8-byte header [Len\|OpCode\|Checksum] |
+| **Security: Checksum** | ok | 16-bit checksum 驗證 |
+| **Security: 加密** | ok | XOR cipher (key: 0x5A) |
+| **Reliability: Heartbeat** | ok | Client 每 3 秒發送心跳 |
+| **Reliability: Timeout** | ok | Server 追蹤連線狀態 |
+| **Modularity: 靜態函式庫** | ok | libproto.a |
+| **README 文件** | ok | 本文件 |
 
 ## 系統架構
 
