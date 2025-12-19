@@ -1,6 +1,6 @@
 #  Snake Game + Chatroom - Network and System Programming & OS Final Project
 
-多人貪食蛇遊戲 + 即時聊天室，符合作業系統期末專案所有要求。
+多人貪食蛇遊戲 + 即時聊天室，符合網路系統程式開發與作業系統期末專案所有要求。
 
 ## 課程要求 Checklist
 
