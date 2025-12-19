@@ -225,18 +225,18 @@ pthread_mutex_lock(&g_state->lock);
 // ... 讀寫 game state ...
 pthread_mutex_unlock(&g_state->lock);
 ```
-## 遊戲截圖
+## 遊戲展示
 
 ### 玩家登入畫面
-![玩家1登入畫面畫(.player1_login.png)
+![玩家1登入畫面畫(./player1_login.png)
 
-![玩家2登入畫面畫(.player2_login.png)
+![玩家2登入畫面畫(./player2_login.png)
 
 ### 多人連線遊戲畫面
-![遊戲畫面和聊天室](.GameChat.png)
+![遊戲畫面和聊天室](./GameChat.png)
 
 ### 壓力測試
-![100-client連線測試](.100clients_Test.png)
+![100-client連線測試](./100clients_Test.png)
 
 ## License
 
