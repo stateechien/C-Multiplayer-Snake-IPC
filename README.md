@@ -228,9 +228,9 @@ pthread_mutex_unlock(&g_state->lock);
 ## 遊戲展示
 
 ### 玩家登入畫面
-![玩家1登入畫面](./player1_login.png)
+<img src="./player1_login.png" width="600">
 
-![玩家2登入畫面](./player2_login.png)
+<img src="./player2_login.png" width="600">
 
 ### 多人連線遊戲畫面
 ![遊戲畫面和聊天室](./GameChat.png)
