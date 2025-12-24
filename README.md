@@ -186,12 +186,43 @@ SnakeFinal/
 
 ## 團隊分工
 
-| 成員 | 負責模組 |
-|------|----------|
-| A | Server (Multi-process, Shared Memory, Game Loop) |
-| B | Client (Multi-thread, ncurses UI, 壓力測試) |
-| C | Protocol (Checksum, XOR 加密, 封包處理) |
-| D | 整合測試、文件撰寫、Bug 修復 |
+### (成員 A, ) 
+```
+server.c 負責:
+- init_snake()        // 初始化蛇
+- move_snake()        // 蛇移動邏輯
+- game_loop_process() // 遊戲主迴圈
+
+client.c 負責:
+- draw_game()         // 繪製遊戲畫面
+- 壓力測試模式 (-s 100)
+```
+### (成員 B, stateechien) 
+```
+server.c 負責:
+- add_chat_message()      // 儲存聊天訊息
+- 聊天廣播邏輯             // 發送給所有玩家
+- 玩家加入/離開處理
+- Shared Memory 同步
+- worker_process()        // 處理多個 client
+
+client.c 負責:
+- draw_chat()             // 聊天視窗
+- draw_scores()           // 計分板 (顯示所有玩家)
+- 聊天輸入模式 (Tab 鍵)
+- receiver_thread()       // 接收多人資料
+- check_collisions()      // 碰撞檢測 (牆、食物、其他蛇)
+- spawn_food()            // 食物生成
+- rebuild_map()           // 地圖重建
+- 延遲/吞吐量統計
+```
+
+## 共同負責:
+
+| 模組 | 檔案 | 說明 |
+|------|------|------|
+| Protocol | proto.c/h | XOR 加密 + Checksum |
+| 資料結構 | common.h | 共用定義 |
 
 ## 技術細節
 
