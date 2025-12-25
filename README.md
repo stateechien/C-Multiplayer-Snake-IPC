@@ -118,10 +118,10 @@ make clean && make all
 ./server
 
 # Terminal 2: 玩家 1
-./client -n Alice
+./client -n Amy
 
 # Terminal 3: 玩家 2
-./client -n Bob
+./client -n Joy
 
 # 壓力測試 (100 個 AI clients)
 ./client -s 100
