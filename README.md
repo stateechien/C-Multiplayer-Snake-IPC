@@ -186,7 +186,7 @@ SnakeFinal/
 
 ## 團隊分工
 
-### (成員 A, ) 
+### (成員 A, Ahaha0214) 
 ```
 server.c 負責:
 - init_snake()        // 初始化蛇
