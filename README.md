@@ -2,23 +2,6 @@
 
 多人貪食蛇遊戲 + 即時聊天室，符合網路系統程式開發期末專案所有要求。
 
-## 課程要求 Checklist
-
-| 要求 | 狀態 | 實作方式 |
-|------|------|----------|
-| **Server: Multi-process** | ok | Prefork Workers + Game Loop Process |
-| **IPC: 共享記憶體** | ok | System V Shared Memory (shmget/shmat) |
-| **Client: Multi-threaded** | ok | Input + Receiver + Heartbeat 三個執行緒 |
-| **100+ 併發壓力測試** | ok | `./client -s 100` |
-| **延遲/吞吐量統計** | ok | Avg Latency (μs) + Throughput (req/sec) |
-| **Custom Protocol** | ok | 8-byte header [Len\|OpCode\|Checksum] |
-| **Security: Checksum** | ok | 16-bit checksum 驗證 |
-| **Security: 加密** | ok | XOR cipher (key: 0x5A) |
-| **Reliability: Heartbeat** | ok | Client 每 3 秒發送心跳 |
-| **Reliability: Timeout** | ok | Server 追蹤連線狀態 |
-| **Modularity: 靜態函式庫** | ok | libproto.a |
-| **README 文件** | ok | 本文件 |
-
 ## 系統架構
 
 ### Server 架構 (Multi-Process + Shared Memory)
@@ -188,14 +171,26 @@ SnakeFinal/
 
 ### (成員 A, Ahaha0214) 
 ```
+proto.c 負責:
+- calculate_checksum()
+- xor_cipher()
+- send_packet()
+- revc_packet()
+
 server.c 負責:
 - init_snake()        // 初始化蛇
 - move_snake()        // 蛇移動邏輯
 - game_loop_process() // 遊戲主迴圈
+- handlle_client_message()
+- signal_handler()
+- clean_up()
 
 client.c 負責:
 - draw_game()         // 繪製遊戲畫面
 - 壓力測試模式 (-s 100)
+- run_stress_test()
+- send_move()
+- send_chat()
 ```
 ### (成員 B, stateechien) 
 ```
