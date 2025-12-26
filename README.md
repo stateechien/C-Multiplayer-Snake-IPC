@@ -169,7 +169,7 @@ SnakeFinal/
 
 ## 團隊分工
 
-### (成員 A, Ahaha0214) 
+### (成員 A, Ahaha0214) 王繹翔
 ```
 proto.c 負責:
 - calculate_checksum()
@@ -192,7 +192,7 @@ client.c 負責:
 - send_move()
 - send_chat()
 ```
-### (成員 B, stateechien) 
+### (成員 B, stateechien) 洪千雅
 ```
 server.c 負責:
 - add_chat_message()      // 儲存聊天訊息
